@@ -1,3 +1,5 @@
+*Currently under development.*
+
 # overlappingReads
 used as a pipeline to quality trim, then collapse overlapping reads (e.g. paired-end where insert size is less than the length of R1 + R2)
 
