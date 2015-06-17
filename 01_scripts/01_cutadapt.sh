@@ -4,7 +4,7 @@
 
 # Global variables
 RAW_FOLDER="02_raw_data"
-TRIMMED_FOLDER="03_trimmed"
+ADREM_FOLDER="03_adapter_removed"
 CUTADAPT="/usr/local/bin/cutadapt"
 
 # Filtering and trimming data with trimmomatic
@@ -39,5 +39,5 @@ ls -1 $RAW_FOLDER/*.fastq.gz | \
 #    done
 
 
-# Transfer trimmed files to $TRIMMED_FOLDER folder
-mv $RAW_FOLDER/*remadapt* $TRIMMED_FOLDER
+# Transfer trimmed files to $ADREM_FOLDER folder
+mv $RAW_FOLDER/*remadapt* $ADREM_FOLDER
