@@ -2,8 +2,8 @@
 #$ -N PEAR
 #$ -M $MY_EMAIL_ADDRESS
 #$ -m beas
-#$ -pe smp 9
-#$ -l h_vmem=100G
+#$ -pe smp 3
+#$ -l h_vmem=40G
 #$ -l h_rt=24:00:00
 #$ -cwd
 #$ -S /bin/bash
