@@ -19,25 +19,9 @@ ls -1 $RAW_FOLDER/*.fastq.gz | \
         -a AGATCGGAAGAGCACACGTCTGAACTCCAGTCAC \
         -A AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGTAGATCTCGGTGGTCGCCGTATCATT \
         -o "$i"R1_001_remadapt.fastq.gz -p "$i"R2_001_remadapt.fastq.gz \
-	"$i"R1_001.fastq.gz "$i"R2_001.fastq.gz
+	"$i"R1_001.fastq.gz "$i"R2_001.fastq.gz \
+        --minimum-length 2
     done
-
-#ls -1 $RAW_FOLDER/*R1*.fastq.gz | \
-#    sort -u |
-#    while read i
-#    do
-#        echo $i
-#	cutadapt -a AGATCGGAAGAGCACACGTCTGAACTCCAGTCA -o "${i%fastq.gz}"remadap.fastq.gz "$i"
-#    done
-#
-#ls -1 $RAW_FOLDER/*R2*.fastq.gz | \
-#    sort -u |
-#    while read i
-#    do
-#        echo $i
-#        cutadapt -a AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT -o "${i%fastq.gz}"remadap.fastq.gz "$i"
-#    done
-
 
 # Transfer trimmed files to $ADREM_FOLDER folder
 mv $RAW_FOLDER/*remadapt* $ADREM_FOLDER
