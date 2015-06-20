@@ -25,3 +25,4 @@ z-*
 *.gff3
 *.test
 *.dict
+summary_of_overlap.txt
