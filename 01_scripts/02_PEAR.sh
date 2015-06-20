@@ -1,16 +1,11 @@
 #!/bin/bash
-# remove adapter sequences from reads using cutadapt
-# point to the trimmomatic.jar in Global variables
+# decompresses paired fastq.gz files and uses PEAR to collapse into single reads when possible
+# removes decompressed reads, then moves files to the binned folder
 
 # Global variables
 ADREM_FOLDER="03_adapter_removed"
 BINNED_FOLDER="04_binned_pairs"
 PEAR="/usr/local/bin/pear"
-
-#cd $ADREM_FOLDER
-#$PEAR -f BenLarge_S1_L001_R1_001_remadapt.fastq -r BenLarge_S1_L001_R2_001_remadapt.fastq -o "BenLarge_S1_L001_"
-
-
 
 ## Filtering and trimming data with trimmomatic
 ls -1 $ADREM_FOLDER/*.fastq.gz | \
@@ -30,3 +25,6 @@ ls -1 $ADREM_FOLDER/*.fastq.gz | \
      #rm "$i"R1_001_remadapt.fastq
      #rm "$i"R2_001_remadapt.fastq
     done
+
+mv $ADREM_FOLDER/*assembled* $BINNED_FOLDER/ 
+mv $ADREM_FOLDER/*discarded* $BINNED_FOLDER/
