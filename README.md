@@ -23,4 +23,4 @@ Run all jobs from the main directory
 Job files are specific to Katak at IBIS, but with some minor editing can be adapted for other servers  
 
 ##1. Remove Adapters
-At this stage, we will not trim based on quality, as even the low quality bases are going to be used (intelligently) by the merging program.
+At this stage, we will not trim based on quality, as even the low quality bases are going to be used (intelligently) by the merging program. Using -p flag will ensure that the output files are equal (i.e. if a read is removed from one library it will also be removed from the paired library).
