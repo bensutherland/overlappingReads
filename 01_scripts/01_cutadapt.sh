@@ -4,25 +4,30 @@
 # Global variables
 RAW_FOLDER="02_raw_data"
 REMADAPT_FOLDER="03_adapter_removed"
+
+# User-defined
 CUTADAPT="/usr/local/bin/cutadapt"
-ADAPTER_FWD="AGATCGGAAGAGCACACGTCTGAACTCCAGTCAC"
-ADAPTER_REV="AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGTAGATCTCGGTGGTCGCCGTATCATT"
+ILLUMINA_ADAPTERS="/project/lbernatchez/drobo/users/bensuth/00_resources/illumina_adapters.fasta"
+#ADAPTER_FWD="AGATCGGAAGAGCACACGTCTGAACTCCAGTCAC"
+#ADAPTER_REV="AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGTAGATCTCGGTGGTCGCCGTATCATT"
+
+# note: from the documentation of cutadapt 'Multiple adapters', all of the sequences in $ILLUMINA_ADAPTERS will be used as 3' adapters; but ONLY THE BEST MATCHING adapter is trimmed from each read.
+# note: if choose to avoid cutting chance adapter matching, add the flag -o to the script
+
 
 # remove adapters with cutadapt
-ls -1 $RAW_FOLDER/*.fastq.gz | \
-    grep -vE "paired|single" | \
-    perl -pe 's/R[12]\.fastq\.gz//' | \
-    sort -u | \
+ls -1 $RAW_FOLDER/*.fastq.gz | 
+    perl -pe 's/R[12]\.fastq\.gz//' | 
+    sort -u | 
     while read i
     do
       echo $i
       $CUTADAPT \
-        -a $ADAPTER_FWD \
-        -A $ADAPTER_REV \
+        -a file:$ILLUMINA_ADAPTERS \
+        -A file:$ILLUMINA_ADAPTERS \
         -o "$i"R1.remadapt.fastq.gz -p "$i"R2.remadapt.fastq.gz \
 	"$i"R1.fastq.gz "$i"R2.fastq.gz \
-        --minimum-length 100 \
-        -e 0.2
+        -e 0.1
     done
 
 # Transfer trimmed files to $ADREM_FOLDER folder
