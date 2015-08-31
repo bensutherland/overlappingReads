@@ -14,7 +14,6 @@ ILLUMINA_ADAPTERS="/project/lbernatchez/drobo/users/bensuth/00_resources/illumin
 # note: from the documentation of cutadapt 'Multiple adapters', all of the sequences in $ILLUMINA_ADAPTERS will be used as 3' adapters; but ONLY THE BEST MATCHING adapter is trimmed from each read.
 # note: if choose to avoid cutting chance adapter matching, add the flag -o to the script
 
-
 # remove adapters with cutadapt
 ls -1 $RAW_FOLDER/*.fastq.gz | 
     perl -pe 's/R[12]\.fastq\.gz//' | 
