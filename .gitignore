@@ -26,3 +26,4 @@ z-*
 *.test
 *.dict
 summary_of_overlap.txt
+00_archive/logfiles/*
