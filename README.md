@@ -23,7 +23,7 @@ Run all jobs from the main directory
 Job files are specific to Katak at IBIS, but with some minor editing can be adapted for other servers  
 
 ##1. Remove Adapters
-At this stage, we do not trim based on quality, as the base call quality is used by the merging program to decide when to merge the two reads. Using paired end mode (via the -p flag) will ensure that the output files are equal (i.e. if a read is removed from one library it will also be removed from the paired library).
+At this stage, we do not trim based on quality, as base call quality is used by the merging program to decide when to merge the two reads. Using paired end mode (via the -p flag) will ensure that the output files are equal (i.e. if a read is removed from one library it will also be removed from the paired library).
 
 
 
