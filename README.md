@@ -36,6 +36,3 @@ Output will be in `04_binned_pairs`, and will be either the 'extendedFrags.fastq
 
 
 
-
-
-
