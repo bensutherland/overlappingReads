@@ -4,7 +4,7 @@ Version 0.1
 2015-08-05
 
 ### Disclaimer
-This pipeline is made available **with no waranty of usefulness of any kind**.  
+This pipeline is made available **with no warranty of usefulness of any kind**.  
 Purpose: remove adapters then merge overlapping reads (i.e. paired-end where insert size is less than the length of R1 + R2)
 
 When paired end data is overlapping, it can improve assemblies to collapse the two reads into a single read
