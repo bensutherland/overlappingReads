@@ -14,7 +14,7 @@ Outcome: a combination of single-end (i.e. less than the length of R1+R2) reads 
 
 Requires the following:  
 `cutadapt`         http://cutadapt.readthedocs.org/en/stable/  
-`pear`                http://sco.h-its.org/exelixis/web/software/pear/   
+`FLASh`            http://ccb.jhu.edu/software/FLASH/ 
 
 ### General comments
 Put raw *fastq.gz single-end data in 02_raw_data  
@@ -23,4 +23,19 @@ Run all jobs from the main directory
 Job files are specific to Katak at IBIS, but with some minor editing can be adapted for other servers  
 
 ##1. Remove Adapters
-At this stage, we will not trim based on quality, as even the low quality bases are going to be used (intelligently) by the merging program. Using -p flag will ensure that the output files are equal (i.e. if a read is removed from one library it will also be removed from the paired library).
+At this stage, we do not trim based on quality, as the base call quality is used by the merging program to decide when to merge the two reads. Using paired end mode (via the -p flag) will ensure that the output files are equal (i.e. if a read is removed from one library it will also be removed from the paired library).
+
+
+
+##2. Merge Reads
+Edit 01_scripts/02_flash_merge.sh by providing the full path to the FLASH program.
+Output will be in `04_binned_pairs`, and will be either the 'extendedFrags.fastq.gz' or the forward/reverse reads. 
+**note, currently this requires a temp folder within 04_binned_pairs entitled 03_adapter_removed/ but this will be fixed soon
+
+
+
+
+
+
+
+
