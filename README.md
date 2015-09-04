@@ -1,6 +1,6 @@
 # overlappingReads
-*Currently under development.* 
-Version 0.3  
+*Currently under development.*  
+Version 0.3 
 2015-09-04  
 
 ### Disclaimer
@@ -18,6 +18,7 @@ Requires the following:
 
 ### General comments
 Put raw *fastq.gz single-end data in 02_raw_data  
+Prepare a file that contains the illumina adapters  
 Please note that reads must end in *R1.fastq.gz or *R1.fastq (or the R2 equivalent)  
 Run all jobs from the main directory  
 Job files are specific to Katak at IBIS, but with some minor editing can be adapted for other servers  
