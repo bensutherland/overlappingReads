@@ -21,6 +21,6 @@ ls -1 $ADREM_FOLDER/*.fastq.gz |
     while read i
     do
       echo $i 
-      $FLASH "$i"R1.remadapt.fastq.gz "$i"R2.remadapt.fastq.gz --compress --output-directory=$BINNED_FOLDER -t 5 
+      $FLASH "$i"R1.remadapt.fastq.gz "$i"R2.remadapt.fastq.gz --compress --output-directory=$BINNED_FOLDER -t 5 --output-prefix="$i"
     done
 
