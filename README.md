@@ -61,7 +61,6 @@ Output files are in 04_binned_pairs/output_histograms/
 ##d) Prepare merged and unmerged files for assembly
 *coming soon*
 Combine all merged reads into one single-end library for the assembly (here is shown to do this for HISeq and MISeq lanes separately to evaluate effect on assembly.  
-**note: you can give your collected library a more informative name if needed**
-``gunzip -c 04_binned_pairs/HI.*extended* > 05_assembly_ready/HI.single.fastq`` 
+*note: you can give your collected library a more informative name if needed*   
+``gunzip -c 04_binned_pairs/HI.*extended* > 05_assembly_ready/HI.single.fastq``  
 ``gunzip -c 04_binned_pairs/MI.*extended* > 05_assembly_ready/MI.single.fastq`` 
-``gzip 05_assembly_ready/HI.single.fastq``
