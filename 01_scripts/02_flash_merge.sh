@@ -23,3 +23,7 @@ ls -1 $ADREM_FOLDER/*.fastq.gz |
       prefix=$(basename $i) 
       $FLASH "$i"R1.remadapt.fastq.gz "$i"R2.remadapt.fastq.gz --compress --output-directory=$BINNED_FOLDER -t 5 --output-prefix="$prefix"
     done
+
+
+## move output QC files to folder output_histograms/
+mv 04_binned_pairs/*.hist* 04_binned_pairs/output_histograms/
