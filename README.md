@@ -55,8 +55,9 @@ qsub 01_scripts/jobs/02_flash_merge_job.sh
 ```
 
 ##c) Assess output of merging
-*coming soon*
 Output files are in 04_binned_pairs/output_histograms/  
+These contain graphical representation of the proportion of reads within each bp length   
+View using `less` to get an understanding of your size distribution
 
 ##d) Prepare merged and unmerged files for assembly
 *coming soon*
