@@ -28,3 +28,4 @@ z-*
 summary_of_overlap.txt
 00_archive/logfiles/*
 *.hist*
+*md5*
