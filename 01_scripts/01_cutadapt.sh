@@ -26,7 +26,8 @@ ls -1 $RAW_FOLDER/*.fastq.gz |
         -A file:$ILLUMINA_ADAPTERS \
         -o "$i"R1.remadapt.fastq.gz -p "$i"R2.remadapt.fastq.gz \
 	"$i"R1.fastq.gz "$i"R2.fastq.gz \
-        -e 0.1
+        -e 0.1 \
+        --minimum-length 1 
     done
 
 # Transfer trimmed files to $ADREM_FOLDER folder
